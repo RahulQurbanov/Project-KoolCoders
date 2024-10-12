@@ -27,6 +27,7 @@ function addUser(){
 let button=document.querySelector(".btn");
 let email=document.querySelector("#eml");
 let password=document.querySelector("#psw");
+let exit =document.querySelector("#exit");
 
 
 
@@ -46,7 +47,7 @@ function show1(event) {
 
 function addProfil(){
     let userName = localStorage.getItem("userName");
-
+    
     if (userName) {
         let header = document.querySelector("header");
         let name = document.createElement("div");
@@ -58,21 +59,22 @@ function addProfil(){
         `;
         header.appendChild(name);
 
-        add.style.display="none";
+        add.style.display = "none";
+        
         let exit = name.querySelector("#exit");
+        exit.addEventListener("click",()=>{
+            window.location.href = "login.html";
+            localStorage.removeItem("username")
+        });
         
     }
 }
-console.log(exit);
-  
 
 document.addEventListener("DOMContentLoaded", function() {
    addProfil()
 });
 
-exit.addEventListener("click",()=>{
-    window.location.href = "login.html";
-});
+
 
 
 

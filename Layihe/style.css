@@ -712,3 +712,8 @@ footer{
     padding-left: 30px;
     cursor: pointer;
 }
+.menu-bell{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
